@@ -7,21 +7,10 @@ private:
     string nameOfAnimal, habitat_area, sound;
     int weight, height, birthYear;
 public:
-    Animal():birthYear(2021)
+    Animal(): nameOfAnimal(" "),habitat_area(" "), sound(" "), weight(0),height(0), birthYear(2021)
     {}
-    Animal(string Sound):sound(Sound),birthYear(2021)
+    Animal(string Sound): nameOfAnimal(" "),habitat_area(" "), sound(Sound), weight(0),height(0), birthYear(2021)
     {}
-//    Animal(string Name, string Habitat, int w, int h): nameOfAnimal(Name),habitat_area(Habitat),weight(w),height(h),birthYear(2021)
-//    {}
-//    Animal(string Name, string Habitat, int w, int h, int Birthyear): nameOfAnimal(Name),habitat_area(Habitat), weight(w),height(h),birthYear(Birthyear)
-//    {
-//        if(birthYear>2021)
-//        {
-//            cout<<"Birth Year cannot be greater than 2021\nSetting it to the default Birth Year"<<endl;
-//            birthYear = 2021;
-//        }
-//    }
-
     Animal(string Name, string Habitat, string Sound, int w, int h): nameOfAnimal(Name),habitat_area(Habitat), sound(Sound),weight(w),height(h), birthYear(2021)
     {}
     Animal(string Name, string Habitat, string Sound, int w, int h, int Birthyear): nameOfAnimal(Name),habitat_area(Habitat), sound(Sound),weight(w),height(h), birthYear(Birthyear)
@@ -33,10 +22,8 @@ public:
         }
     }
 
-    void setName()
+    void setName(string n)
     {
-        string n;
-        cin>>n;
         nameOfAnimal = n;
     }
     string getName() const
@@ -44,10 +31,8 @@ public:
         return nameOfAnimal;
     }
 
-    void setHabitat()
+    void setHabitat(string h)
     {
-        string h;
-        cin>>h;
         habitat_area= h;
     }
     string getHabitat() const
@@ -55,10 +40,9 @@ public:
         return habitat_area;
     }
 
-    void setSound()
+    void setSound(string s)
     {
-        string s;
-        cin>>s;
+
         sound=s;
     }
     string getSound() const
@@ -66,10 +50,8 @@ public:
         return sound;
     }
 
-    void setWeight()
+    void setWeight(int w)
     {
-        int w;
-        cin>>w;
         weight = w;
     }
     int getWeight() const
@@ -77,10 +59,8 @@ public:
         return weight;
     }
 
-    void setHeight()
+    void setHeight(int ht)
     {
-        int ht;
-        cin>>ht;
         height = ht;
     }
     int getHeight() const
@@ -120,7 +100,7 @@ public:
     }
     void vocalize()
     {
-        cout<<"\""<<sound<<"\"";
+        cout<<sound;
     }
 };
 
@@ -160,9 +140,6 @@ public:
 };
 int main()
 {
-    string name, habitat,sound;
-    int weight, height, birthYear, age;
-
     Cow obj1;
     Chicken obj2("Lali","Farm","buck buck", 2,3,2019);
     Cat obj3("Mini","Home","meow", 3,2);
